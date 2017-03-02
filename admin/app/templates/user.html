@@ -1,0 +1,40 @@
+<br />
+<form>
+  <div class="form-group">
+    <label for="phonenumber">Номер телефона</label>
+    <input type="text" class="form-control" id="phonenumber" placeholder="Номер телефона" ng-model="phonenumber">
+  </div>
+  <div class="form-group">
+    <label for="password">Пароль</label>
+    <input type="password" class="form-control" id="password" placeholder="Пароль" ng-model="password">    
+ </div>
+  <button type="button" class="btn btn-primary" style="margin: 0px auto;" ng-click="add()" data-toggle="modal" data-target="#myModal" >Добавить</button>
+</form>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Результат запроса</h4>
+      </div>
+      <div class="modal-body" ng-if="!!result">
+        <span style="display: block; word-wrap: break-word;">Результат: {{result}}</span>
+      </div>
+      <div class="modal-body" ng-if="!!error">
+        <span style="display:block; word-wrap: break-word;">Ошибка: {{error}}</span>
+      </div>
+      
+      <div class="modal-body" ng-if="!result && !error">
+        <i class="fa fa-cog fa-spin fa-1x fa-fw"></i>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-cog fa-spin fa-fw" ng-if="!result && !error"></i>&nbsp;Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,50 @@
+<h3>User List</h3>
+<br />
+<a href="#" ng-click="update()"><i class="fa fa-cog fa-refresh fa-1x fa-fw"></i></a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>index</th>
+            <th>uid</th>
+            <th>phone</th>
+            <th>hash</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="user in users track by $index">
+            <td>{{$index}}</td>
+            <td>{{user.uid}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.pwdHash}}</td>
+        </tr>
+
+    </tbody>
+</table>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Результат запроса</h4>
+      </div>
+      <div class="modal-body" ng-if="!!result">
+        <span style="display: block; word-wrap: break-word;">Результат: {{result}}</span>
+      </div>
+      <div class="modal-body" ng-if="!!error">
+        <span style="display:block; word-wrap: break-word;">Ошибка: {{error}}</span>
+      </div>
+      
+      <div class="modal-body" ng-if="!result && !error">
+        <i class="fa fa-cog fa-spin fa-1x fa-fw"></i>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-cog fa-spin fa-fw" ng-if="!result && !error"></i>&nbsp;Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,28 @@
+{
+  "name": "oauth",
+  "version": "0.1.0",
+  "description": "OAuth authentication server used blockchain smart-contract",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "OAuth",
+    "blockchain",
+    "ethereum",
+    "solidity"
+  ],
+  "author": "Anatoliy A Aksenov",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
+    "express": "^4.14.1",
+    "express-limiter": "^1.6.0",
+    "express-session": "^1.15.0",
+    "helmet": "^3.4.0",
+    "node-flat-db": "^0.2.1",
+    "uuid": "^3.0.1"
+  }
+}
